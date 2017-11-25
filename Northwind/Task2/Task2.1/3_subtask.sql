@@ -1,0 +1,1 @@
+﻿select count(distinct CustomerId) as 'Distinct customers count' from Orders;

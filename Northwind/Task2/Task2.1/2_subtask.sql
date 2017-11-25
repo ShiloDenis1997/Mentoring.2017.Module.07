@@ -1,0 +1,1 @@
+﻿select count(*) - count(ShippedDate) as 'Not delivered count' from Orders;
