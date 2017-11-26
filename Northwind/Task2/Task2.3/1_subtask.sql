@@ -1,5 +1,5 @@
 ﻿--Определить продавцов, которые обслуживают регион 'Western' (таблица Region). 
-select e.EmployeeId as 'EmployeeId'
+select distinct e.EmployeeId as 'EmployeeId'
     ,e.FirstName as 'First name'
 from Employees e
         inner join EmployeeTerritories et ON e.EmployeeID = et.EmployeeID

@@ -71,6 +71,7 @@
     <Folder Include="Task2\Task2.1" />
     <Folder Include="Task2\Task2.2" />
     <Folder Include="Task2\Task2.3" />
+    <Folder Include="Task2\Task2.4" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Employees.sql" />
@@ -133,5 +134,9 @@
     <None Include="Task2\Task2.2\4_subtask.sql" />
     <None Include="Task2\Task2.2\5_subtask.sql" />
     <None Include="Task2\Task2.3\1_subtask.sql" />
+    <None Include="Task2\Task2.3\2_subtask.sql" />
+    <None Include="Task2\Task2.4\1_subtask.sql" />
+    <None Include="Task2\Task2.4\2_subtask.sql" />
+    <None Include="Task2\Task2.4\3_subtask.sql" />
   </ItemGroup>
 </Project>
