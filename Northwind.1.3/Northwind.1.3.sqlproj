@@ -63,6 +63,8 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Views\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\deploy" />
+    <Folder Include="dbo\deploy\postDeploy" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Categories.sql" />
@@ -98,11 +100,17 @@
     <Build Include="dbo\Stored Procedures\Employee Sales by Country.sql" />
     <Build Include="dbo\Stored Procedures\Sales by Year.sql" />
     <Build Include="dbo\Stored Procedures\Ten Most Expensive Products.sql" />
+    <None Include="dbo\deploy\postDeploy\Categories_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Northwind.1.3.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Northwind.1.3.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="dbo\deploy\postDeploy.sql" />
+    <None Include="dbo\deploy\postDeploy\Suppliers_Insert.sql" />
+    <None Include="dbo\deploy\postDeploy\Products_Insert.sql" />
   </ItemGroup>
 </Project>
