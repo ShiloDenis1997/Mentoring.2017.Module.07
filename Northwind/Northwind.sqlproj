@@ -70,6 +70,7 @@
     <Folder Include="Task2" />
     <Folder Include="Task2\Task2.1" />
     <Folder Include="Task2\Task2.2" />
+    <Folder Include="Task2\Task2.3" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Employees.sql" />
@@ -109,6 +110,7 @@
     <Build Include="dbo\Stored Procedures\CustOrderHist.sql" />
     <Build Include="dbo\Stored Procedures\SalesByCategory.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="Task2\Task2.2\6_subtask.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Northwind.local.publish.xml" />
@@ -126,5 +128,10 @@
     <None Include="Task2\Task2.1\2_subtask.sql" />
     <None Include="Task2\Task2.1\3_subtask.sql" />
     <None Include="Task2\Task2.2\1_subtask.sql" />
+    <None Include="Task2\Task2.2\2_subtask.sql" />
+    <None Include="Task2\Task2.2\3_subtask.sql" />
+    <None Include="Task2\Task2.2\4_subtask.sql" />
+    <None Include="Task2\Task2.2\5_subtask.sql" />
+    <None Include="Task2\Task2.3\1_subtask.sql" />
   </ItemGroup>
 </Project>
