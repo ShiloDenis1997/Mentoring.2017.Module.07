@@ -115,7 +115,6 @@
     <None Include="Task2\Task2.2\6_subtask.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Northwind.local.publish.xml" />
     <None Include="Task1\Task1.1\1_subtask.sql" />
     <None Include="Task1\Task1.1\2_subtask.sql" />
     <None Include="Task1\Task1.1\3_subtask.sql" />
@@ -141,5 +140,6 @@
     <None Include="Task2\Task2.4\3_subtask.sql" />
     <None Include="Task3\From_1.0_to_1.1.sql" />
     <None Include="Task3\From_1.1_to_1.3.sql" />
+    <None Include="Northwind.publish.xml" />
   </ItemGroup>
 </Project>
