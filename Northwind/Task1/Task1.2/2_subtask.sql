@@ -2,8 +2,9 @@
 --Запрос сделать с помощью оператора IN. Возвращать колонки с именем пользователя 
 --и названием страны в результатах запроса. Упорядочить результаты запроса по имени заказчиков.
 
-select 
-    ContactName as 'Contact Name'
-    ,Country    as 'Country'
-from Customers where Country NOT IN ('USA', 'Canada')
-order by ContactName;
+SELECT 
+    CustomersT.[ContactName]    AS 'Contact Name'
+    ,CustomersT.[Country]       AS 'Country'
+FROM [dbo].[Customers] CustomersT
+WHERE CustomersT.[Country] NOT IN ('USA', 'Canada')
+ORDER BY CustomersT.[ContactName];

@@ -2,8 +2,14 @@
 --включительно и которые доставлены с ShipVia >= 2. Запрос должен возвращать только колонки OrderID,
 --ShippedDate и ShipVia. 
 
-select 
-    OrderID as 'OrderID'
-    ,ShippedDate as 'ShippedDate'
-    ,ShipVia as 'ShipVia'
-from Orders where ShippedDate >= Convert(DATETIME, '1998-05-06') AND ShipVia >= 2;
+DECLARE
+    @date DATETIME = Convert(DATETIME, '1998-05-06')
+    ,@shipVia INT = 2
+    ;
+
+SELECT 
+    OrderT.[OrderID]            AS 'OrderID'
+    ,OrderT.[ShippedDate]       AS 'ShippedDate'
+    ,OrderT.[ShipVia]           AS 'ShipVia'
+FROM [dbo].[Orders] OrderT
+WHERE OrderT.[ShippedDate] >= @date AND OrderT.[ShipVia] >= @shipVia;

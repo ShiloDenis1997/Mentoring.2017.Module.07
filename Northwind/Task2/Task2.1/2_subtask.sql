@@ -2,4 +2,5 @@
 --(т.е. в колонке ShippedDate нет значения даты доставки). Использовать при этом запросе 
 --только оператор COUNT. Не использовать предложения WHERE и GROUP.
 
-select count(*) - count(ShippedDate) as 'Not delivered count' from Orders;
+SELECT COUNT(*) - COUNT(OrdersT.[ShippedDate]) AS 'Not delivered count' 
+FROM [dbo].[Orders] OrdersT;

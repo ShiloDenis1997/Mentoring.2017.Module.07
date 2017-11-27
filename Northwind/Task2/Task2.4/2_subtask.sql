@@ -1,3 +1,6 @@
 ﻿--Выдать всех продавцов, которые имеют более 150 заказов. Использовать вложенный SELECT
-select EmployeeID from Employees e
-    where (select count(OrderID) from Orders o where o.EmployeeID =e.EmployeeID) > 150;
+SELECT EmployeesT.[EmployeeID]  AS 'EmployeeID'
+FROM [dbo].[Employees] EmployeesT
+WHERE (SELECT COUNT(OrdersT.[OrderID]) 
+        FROM [dbo].[Orders] OrdersT 
+        WHERE OrdersT.[EmployeeID] = EmployeesT.[EmployeeID]) > 150;

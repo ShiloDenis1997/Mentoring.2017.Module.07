@@ -2,7 +2,7 @@
 --один раз и список отсортирован по убыванию. Не использовать предложение GROUP BY. Возвращать только одну
 --колонку в результатах запроса. 
 
-select distinct
-    Country    as 'Country'
-from Customers
-order by Country desc;
+SELECT DISTINCT
+    CustomersT.[Country]    AS 'Country'
+FROM [dbo].[Customers] CustomersT
+ORDER BY CustomersT.[Country] DESC;

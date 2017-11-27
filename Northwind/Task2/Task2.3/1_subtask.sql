@@ -1,8 +1,12 @@
 ﻿--Определить продавцов, которые обслуживают регион 'Western' (таблица Region). 
-select distinct e.EmployeeId as 'EmployeeId'
-    ,e.FirstName as 'First name'
-from Employees e
-        inner join EmployeeTerritories et ON e.EmployeeID = et.EmployeeID
-        inner join Territories t ON et.TerritoryID = t.TerritoryID
-        inner join Region r on r.RegionID = t.RegionID
-where r.RegionDescription = 'Western';
+SELECT DISTINCT 
+    EmployeesT.[EmployeeId]         AS 'EmployeeId'
+    ,EmployeesT.[FirstName]         AS 'First name'
+FROM [dbo].[Employees] EmployeesT
+        INNER JOIN [dbo].[EmployeeTerritories] EmployeeTerritoriesT 
+            ON EmployeesT.[EmployeeID] = EmployeeTerritoriesT.[EmployeeID]
+        INNER JOIN [dbo].[Territories] TerritoriesT 
+            ON EmployeeTerritoriesT.[TerritoryID] = TerritoriesT.[TerritoryID]
+        INNER JOIN [dbo].[Region] RegionT 
+            ON RegionT.[RegionID] = TerritoriesT.[RegionID]
+WHERE RegionT.[RegionDescription] = 'Western';

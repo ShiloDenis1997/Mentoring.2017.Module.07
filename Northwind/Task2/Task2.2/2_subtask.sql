@@ -7,9 +7,12 @@
 --Также основной запрос должен использовать группировку по EmployeeID.) с
 --названием колонки ‘Seller’ и колонку c количеством заказов возвращать с 
 --названием 'Amount'. Результаты запроса должны быть упорядочены по убыванию количества заказов. 
-select 
-    (select concat(LastName,' ', FirstName) from Employees c where c.EmployeeID = o.EmployeeID) as 'Seller'
-    ,count(o.OrderId) as 'Amount'
-    from Orders o 
-    group by o.EmployeeID
-    order by 'Amount' desc;
+SELECT 
+    (SELECT CONCAT(EmployeesT.[LastName],' ', EmployeesT.[FirstName]) 
+        FROM [dbo].[Employees] EmployeesT 
+        WHERE EmployeesT.[EmployeeID] = OrdersT.[EmployeeID]) 
+     AS 'Seller'
+    ,COUNT(OrdersT.[OrderId]) AS 'Amount'
+FROM [dbo].[Orders] OrdersT 
+GROUP BY OrdersT.[EmployeeID]
+ORDER BY 'Amount' DESC;

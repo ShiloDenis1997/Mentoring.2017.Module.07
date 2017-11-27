@@ -1,10 +1,11 @@
-﻿IF EXISTS (select * from sys.tables t where t.name = 'Region')
+﻿IF EXISTS (SELECT * FROM SYS.TABLES SystemTables WHERE SystemTables.[Name] = 'Region')
 BEGIN
-    EXEC sp_rename 'Region', 'Regions';
+    EXEC SP_RENAME '[dbo].[Region]', 'Regions';
 END
 
-IF NOT EXISTS (select * from sys.columns where object_id = OBJECT_ID(N'[dbo].[Customers]') AND name = 'FoundationDate')
+IF NOT EXISTS (SELECT * FROM SYS.COLUMNS SystemColumns 
+                            WHERE SystemColumns.[OBJECT_ID] = OBJECT_ID(N'[dbo].[Customers]') AND Name = 'FoundationDate')
 BEGIN
-    ALTER TABLE Customers
-    ADD FoundationDate DATETIME
+    ALTER TABLE [dbo].[Customers]
+    ADD [FoundationDate] DATETIME
 END

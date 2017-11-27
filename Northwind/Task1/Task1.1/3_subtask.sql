@@ -4,10 +4,17 @@
 --В результатах запроса возвращать для колонки ShippedDate вместо значений NULL строку ‘Not Shipped’, 
 --для остальных значений возвращать дату в формате по умолчанию.
 
-select 
-    OrderID         as 'Order Number'
-    ,case 
-        when ShippedDate IS NULL then 'Not shipped'
-        else convert(varchar(30), ShippedDate, 0)
-     end as 'Shipped Date'
-from Orders where ShippedDate > Convert(DATETIME, '1998-05-06') OR ShippedDate IS NULL
+DECLARE 
+    @date DATETIME = CONVERT(DATETIME, '1998-05-06')
+    ,@DEFAULT_DATETIME_FORMAT INT = 0
+    ;
+
+SELECT 
+    OrdersT.[OrderID]         AS 'Order Number'
+    ,CASE 
+        WHEN OrdersT.[ShippedDate] IS NULL 
+        THEN 'Not shipped'
+        ELSE CONVERT(VARCHAR(30), OrdersT.[ShippedDate], @DEFAULT_DATETIME_FORMAT)
+     END AS 'Shipped Date'
+FROM [dbo].[Orders] OrdersT 
+WHERE OrdersT.[ShippedDate] > @date OR OrdersT.[ShippedDate] IS NULL;

@@ -1,6 +1,9 @@
 ﻿--По таблице Employees найти для каждого продавца его руководителя.
-select 
-    EmployeeID as 'EmployeeID' 
-    ,FirstName as 'Seller name'
-    ,(select FirstName from Employees where EmployeeID = e.ReportsTo) as 'Boss name'
-from Employees e;
+SELECT 
+    EmployeesT.[EmployeeID]      AS 'EmployeeID' 
+    ,EmployeesT.[FirstName]      AS 'Seller name'
+    ,(SELECT ManagersT.[FirstName] 
+        FROM [dbo].[Employees] ManagersT 
+        WHERE ManagersT.[EmployeeID] = EmployeesT.[ReportsTo]) 
+    AS 'Manager'
+FROM [dbo].[Employees] EmployeesT;

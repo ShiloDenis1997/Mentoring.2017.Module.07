@@ -2,8 +2,9 @@
 --Использовать оператор BETWEEN. Проверить, что в результаты запроса попадает Germany. Запрос должен возвращать 
 --только колонки CustomerID и Country и отсортирован по Country.
 
-select 
-    CustomerId as 'CustomerId'
-    ,Country   as 'Country'
-from Customers where SUBSTRING(Country, 1, 1) between 'b' and 'g'
-order by Country
+SELECT 
+    CustomersT.[CustomerId]     AS 'CustomerId'
+    ,CustomersT.[Country]       AS 'Country'
+FROM [dbo].[Customers] CustomersT
+WHERE SUBSTRING(CustomersT.[Country], 1, 1) BETWEEN 'b' AND 'g'
+ORDER BY CustomersT.[Country];

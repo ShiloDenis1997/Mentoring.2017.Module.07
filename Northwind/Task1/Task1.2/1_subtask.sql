@@ -3,8 +3,9 @@
 --пользователя и названием страны в результатах запроса. Упорядочить результаты 
 --запроса по имени заказчиков и по месту проживания.
 
-select 
-    ContactName as 'Contact Name'
-    ,Country    as 'Country'
-from Customers where Country IN ('USA', 'Canada')
-order by ContactName, Address;
+SELECT 
+    CustomersT.[ContactName]    AS 'Contact Name'
+    ,CustomersT.[Country]       AS 'Country'
+FROM [dbo].[Customers] CustomersT
+WHERE CustomersT.[Country] IN ('USA', 'Canada')
+ORDER BY CustomersT.[ContactName], CustomersT.[Address];

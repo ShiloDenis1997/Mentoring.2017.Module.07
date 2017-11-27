@@ -2,9 +2,11 @@
 --или только один или несколько покупателей, то информация о таких покупателя и продавцах не должна попадать в результирующий набор.
 --Не использовать конструкцию JOIN
 
-select 
-CustomerId              as 'CustomerId',
-Employees.EmployeeID    as 'EmployeeId',
-City                    as 'City'
-from Customers c
-cross apply (select EmployeeId from Employees e where e.City = c.City) Employees;
+SELECT 
+    CustomersT.[CustomerId]      AS 'CustomerId',
+    EmployeesT.[EmployeeID]      AS 'EmployeeId',
+    CustomersT.[City]            AS 'City'
+FROM [dbo].[Customers] CustomersT
+CROSS APPLY (SELECT EmployeesT.[EmployeeId] 
+                FROM [dbo].[Employees] EmployeesT 
+                WHERE EmployeesT.[City] = CustomersT.[City]) EmployeesT;

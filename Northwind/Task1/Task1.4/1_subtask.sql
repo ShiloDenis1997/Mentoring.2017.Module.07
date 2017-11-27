@@ -2,6 +2,6 @@
 --Известно, что в подстроке 'chocolade' может быть изменена одна буква 'c' в середине - найти все продукты, 
 --которые удовлетворяют этому условию. 
 
-select ProductName as 'Product name'
-from Products 
-where ProductName like '%cho_olate%';
+SELECT ProductsT.[ProductName]  AS 'Product name'
+FROM [dbo].[Products] ProductsT
+WHERE ProductsT.[ProductName] LIKE '%cho_olate%';
